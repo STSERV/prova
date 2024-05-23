@@ -26,16 +26,16 @@
         document.body.appendChild(renderer.domElement);
 
         // Aggiungere una luce alla scena
-        var hlight = new THREE.AmbientLight(0x404040, 5);
-        scene.add(hlight);
+        var ambientLight = new THREE.AmbientLight(0x404040, 5);
+        scene.add(ambientLight);
 
         var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 1, 1).normalize();
         scene.add(directionalLight);
 
-        // Caricamento del modello 3D
+        // Caricamento del modello 3D in formato .glb
         var loader = new THREE.GLTFLoader();
-        loader.load('../A4B12054.glb', function(gltf) {
+        loader.load('https://username.github.io/repository/model.glb', function(gltf) {
             var model = gltf.scene;
             scene.add(model);
             animate();
